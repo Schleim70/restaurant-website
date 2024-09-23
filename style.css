@@ -1,0 +1,111 @@
+body {
+    background-color: #133450;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    min-height: 100px;
+}
+.kasten {
+    background-color: #0e202f;
+    min-height: 200px;
+    transform: skewY(-15deg) translateY(-230px);
+}
+
+.menu-schrift {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    transform: rotate(-15deg) translateY(-95px);
+}
+
+.ueberschrift {
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    font-size: 25px;
+  }
+
+section {
+    margin: 0 auto;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateX(200px);
+}
+
+article {
+    width: 400px;
+    padding: 70px 0 0 0;
+}
+
+.menu-schrift li a{
+    font-family: "Press Start 2P", Arial, system-ui;
+    color: white;
+    text-decoration: none;
+}
+
+.bild1 {
+    width: 600px;
+    height: 800px;
+    transform: skewY(-15deg);
+    
+}
+
+.mask {
+    -webkit-mask-image: url(parallelogramm.svg);
+    mask-image: url(parallelogramm.svg);
+    mask-repeat: no-repeat;
+    background-image: url("https://plus.unsplash.com/premium_photo-1670984939096-f3cfd48c7408?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    width: 400px;
+    height: 800px;
+}
+
+
+.trail {
+    position: absolute;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background: rgba(0, 150, 255, 0.8);
+    box-shadow: 0 0 4px 4px rgba(0, 150, 255, 0.8);
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s 0.3s;
+    opacity: 1;
+  }
+  
+  .trail-hidden {
+    opacity: 0;
+    visibility: hidden; /* Hides the element after fading out */
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+  }
+  
+  /* Add a class for the exploding effect */
+  .explode {
+    animation: explode 0.5s forwards;
+    box-shadow: none;
+  }
+  
+  @keyframes explode {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(3);
+      opacity: 0;
+    }
+  }
+  
