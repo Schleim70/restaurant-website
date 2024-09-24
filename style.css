@@ -7,11 +7,10 @@ body {
 nav {
     min-height: 100px;
 }
-
 .kasten {
     background-color: #0e202f;
     min-height: 200px;
-    transform: skewY(-15deg) translateY(-240px);
+    transform: skewY(-15deg) translateY(-230px);
 }
 
 .menu-schrift {
