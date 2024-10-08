@@ -10,7 +10,7 @@ nav {
 .kasten {
     background-color: #0e202f;
     min-height: 200px;
-    transform: skewY(-15deg) translateY(-230px);
+    transform: skewY(-15deg) translateY(-255px);
 }
 
 .menu-schrift {
@@ -18,7 +18,9 @@ nav {
     display: flex;
     justify-content: space-between;
     width: 40%;
-    transform: rotate(-15deg) translateY(-95px);
+    transform: rotate(-15deg) translateY(-100px);
+    word-spacing: 20px;
+    
 }
 
 .ueberschrift {
@@ -108,4 +110,5 @@ article {
       opacity: 0;
     }
   }
+
   
