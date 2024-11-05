@@ -78,9 +78,12 @@ article {
     width: 400px;
     height: 800px;
     width: 100%;
-    margin-left: 400px;
+    margin-left: 151px;
 }
 
+.firstarticle {
+  width: 500px;
+}
 
 .trail {
     position: absolute;
@@ -92,6 +95,7 @@ article {
     pointer-events: none;
     transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s 0.3s;
     opacity: 1;
+    z-index: 9999;
   }
   
   .trail-hidden {
@@ -232,6 +236,7 @@ li {
   padding: 10px;
   border: 1px solid #ddd;
   display: none;
+  margin-left: -150px;
 }
 
 .menu a {
@@ -243,4 +248,9 @@ li {
 
 .menu a:hover {
 
+}
+
+.Getränke {
+  text-decoration: underline;
+  color: rgba(0, 150, 255, 0.8);
 }
