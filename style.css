@@ -7,6 +7,10 @@ body {
 nav {
     min-height: 100px;
 }
+a {
+  text-decoration: none;
+  color: white;
+}
 .kasten {
     background-color: #0e202f;
     min-height: 200px;
@@ -67,14 +71,19 @@ article {
     -webkit-mask-image: url(parallelogramm.svg);
     mask-image: url(parallelogramm.svg);
     mask-repeat: no-repeat;
-    background-image: url("https://plus.unsplash.com/premium_photo-1670984939096-f3cfd48c7408?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-repeat: no-repeat;
+    background-image: none;
     background-size: 100% 100%;
     background-position: center;
     width: 400px;
     height: 800px;
+    width: 100%;
+    margin-left: 151px;
 }
 
+.firstarticle {
+  width: 500px;
+}
 
 .trail {
     position: absolute;
@@ -86,6 +95,7 @@ article {
     pointer-events: none;
     transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s 0.3s;
     opacity: 1;
+    z-index: 9999;
   }
   
   .trail-hidden {
@@ -110,5 +120,137 @@ article {
       opacity: 0;
     }
   }
+  .seitenleiste {
+    width: 237px;
+    position: absolute;
+    background-color:#0e202f;
+    padding: 20px;
+    right: 0;
+    height: 100000%;
+    font-family: "Roboto";
+    color: white;
+    text-decoration: none;
 
-  
+  }
+  .seitenleiste a:hover {
+    color: lightgrey;
+}
+.impressum {
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 17px;
+}
+
+.oeffnungszeiten {
+  font-size: 35px;
+  color: rgb(255, 255, 255); 
+  text-decoration: none;
+  margin-left: -50px;
+}
+
+.events {
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 2px;
+}
+
+.Montag-Sonntag {
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: -10px;
+  text-decoration: none;
+}
+/* ALLE WOCHENTAGE AUFLISTUNG!!! */
+
+.montag, .dienstag, .mittwoch, .donnerstag, .freitag, .samstag, .sonntag {
+margin-left: -40px;
+}
+
+.montag {
+  list-style-type: none;
+  font-size: 17px;
+}
+
+.dienstag {
+  list-style-type: none;
+  font-size: 17px;
+}
+
+.mittwoch {
+  list-style-type: none;
+  font-size: 17px;
+}
+
+.donnerstag {
+  list-style-type: none;
+  font-size: 17px;
+}
+
+.freitag {
+  list-style-type: none;
+  font-size: 17px;
+}
+
+.samstag {
+  list-style-type: none;
+  font-size: 17px;
+}
+
+.sonntag {
+  list-style-type: none;
+  font-size: 17px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.kalender {
+  margin-left: 350px;
+  margin-top: 70px;
+}
+.menu-icon {
+  position: absolute;
+  top: 20px;
+  left: 1870px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.line {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  transition: 0.3s;
+}
+.menu {
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border: 1px solid #ddd;
+  display: none;
+  margin-left: -150px;
+}
+
+.menu a {
+  display: block;
+  margin: 5px 0;
+  text-decoration: none;
+  color: #333;
+}
+
+.menu a:hover {
+
+}
+
+.Getränke {
+  text-decoration: underline;
+  color: rgba(0, 150, 255, 0.8);
+}
