@@ -8,67 +8,55 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Protest+Guerrilla&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>Home - Double In</title>
-
 </head>
 <body>
-    <nav class="seitenleiste">   
+    <div class="main-container">
+        <nav class="seitenleiste">
             <ul>
-            <a href="Impressum.html" class="impressum" style="font-size: 20px;">Impressum</a></li>
+                <li><a href="Impressum.html" class="impressum" style="font-size: 20px;">Impressum</a></li>
+                <li><a href="Events.html" class="events">Events/Pausen</a></li>
+                <li><a href="Oeffnungszeiten.html" class="oeffnungszeiten">Öffnungszeiten</a></li>
             </ul>
-        </div>   
-        <ul> <a href="Events.html" class="events" >Events/Pausen</a> </ul>           
-        <ul> <a href="Oeffnungszeiten.html" class="oeffnungszeiten">Öffnungszeiten</a> </ul>
-        <div> <ul class="Montag-Sonntag"></ul>
-        <li>  <ul class="montag" style="list-style: none;">Montag: Ruhetag</ul>
-        </li>
-        <li>  <ul class="dienstag" style="list-style: none;">Dienstag:   12 Uhr - 23 Uhr</ul>
-        </li>
-        <li>  <ul class="mittwoch" style="list-style: none;">Mittwoch:   12 Uhr - 23 Uhr</ul>
-        </li>
-        <li>  <ul class="donnerstag" style="list-style: none;">Donnerstag: 12 Uhr - 23 Uhr</ul>
-        </li>
-        <li>  <ul class="freitag" style="list-style: none;">Freitag:    12 Uhr - Open-End</ul>
-        </li>  
-        <li>  <ul class="samstag" style="list-style: none;">Samstag:    12 Uhr - Open-End</ul>
-        </li>
-        <li>  <ul class="sonntag" style="list-style: none;">Sonntag:    12 Uhr - 23 Uhr</ul>
-        </li>     
-    </div>
-    </nav>
+            <ul class="Montag-Sonntag">
+                <li class="montag">Montag: Ruhetag</li>
+                <li class="dienstag">Dienstag: 12 Uhr - 23 Uhr</li>
+                <li class="mittwoch">Mittwoch: 12 Uhr - 23 Uhr</li>
+                <li class="donnerstag">Donnerstag: 12 Uhr - 23 Uhr</li>
+                <li class="freitag">Freitag: 12 Uhr - Open-End</li>
+                <li class="samstag">Samstag: 12 Uhr - Open-End</li>
+                <li class="sonntag">Sonntag: 12 Uhr - 23 Uhr</li>
+            </ul>
+        </nav>
 
-    <div class="kasten"></div> 
-    <nav>
-        <ul class="menu-schrift"> 
-            <li>
-                <a href="index.html">Home</a>
-            </li>
-            <li>
-                <a href="Getraenkekarte.html">Getränkekarte</a>
-            </li>
-            <li>
-                <a href="Infos.html">Informationen</a>
-            </li>
-            <li>
-                <a href="Events.html">Events</a>
-            </li>
-        </ul>
-    </nav>
+        <div class="content-area">
+            <div class="kasten"></div> 
+            <nav>
+                <ul class="menu-schrift"> 
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Getraenkekarte.html">Getränkekarte</a></li>
+                    <li><a href="Infos.html">Informationen</a></li>
+                    <li><a href="Events.html">Events</a></li>
+                </ul>
+            </nav>
 
-   <section>
-        <img src="images/kneipe.png" 
-   alt="Das Restaurant" class="mask" /> 
-   </section>
-   <article> <ul class="firstarticle" ul>
-    <p>
-     Willkommen auf der Internetseite von Double In! Wir sind eine Kneipe in Duisburg Meiderich und verkaufen Getränke von Bier bis hin zu Weinen (mehr hier: <a href="Getraenkekarte.html" class="Getränke">Getränke</a>)...
-    </p>
-        </article>
-        <div class="wrapper">
+            <section class="main-image">
+                <img src="images/kneipe.png" alt="Die Kneipe" class="mask" />
+            </section>
         </div>
-        <footer>
-            <a href="Impressum.html">Double In &copy; 2025</a>
-            <a href="Impressum.html">Alle Rechte vorbehalten</a>
-        </footer>
-<script src="scripts.js"></script>
+    </div>
+
+    <section class="dart-section">
+        <img src="images/dart.png" alt="Die Dart Automaten" class="Dart" />
+        <p class="welcome-text">
+            Dart für jedermann
+        </p>
+    </section>
+
+    <footer>
+        <a href="Impressum.html">Double In &copy; 2025</a>
+        <a href="Impressum.html">Alle Rechte vorbehalten</a>
+    </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
