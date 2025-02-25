@@ -1,9 +1,13 @@
-body {
-    background-color: #133450;
-    margin: 0;
-    padding: 0;
+html, body {
+  background-color: #133450;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-
 nav {
     min-height: 100px;
 }
@@ -11,10 +15,29 @@ a {
   text-decoration: none;
   color: white;
 }
+footer {
+  flex-shrink: 0;
+  background-color: #0e202f;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.wrapper {
+  flex-grow: 1;
+}
 .kasten {
-    background-color: #0e202f;
-    min-height: 200px;
-    transform: skewY(-15deg) translateY(-255px);
+  margin-left: -7px;
+  background-color: #0e202f;
+  min-height: 200px;
+  transform: skewY(-15deg) translateY(-255px);
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
 }
 
 .menu-schrift {
@@ -23,8 +46,33 @@ a {
     justify-content: space-between;
     width: 40%;
     transform: rotate(-15deg) translateY(-100px);
-    word-spacing: 20px;
-    
+    word-spacing: 10px;
+    position: fixed;
+    z-index: 100;
+    margin-left: -10px;
+    margin-top: 205px;
+    position: absolute;
+}
+
+.menu-schrift a:hover, 
+.seitenleiste a:hover {
+  color: rgba(0, 150, 255, 0.8); /* Neon-Farbe beim Hover */
+  text-shadow: 0 0 4px rgba(0, 150, 255, 0.5), 0 0 8px rgba(0, 150, 255, 0.4); /* Sanfterer Leucht-Effekt */
+  transform: scale(3); /* Leichte Vergrößerung */
+}
+
+.menu-schrift a {
+  font-family: "Press Start 2P", Arial, system-ui;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease; /* Sanfte Übergänge */
+}
+
+.seitenleiste a {
+  font-family: "Roboto", sans-serif;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .ueberschrift {
@@ -42,11 +90,13 @@ p {
   }
 
 section {
-    margin: 0 auto;
-    width: 50%;
+  margin-top: -100px;
+    width: 2000px;
+    height: 1000px;
     display: flex;
     justify-content: space-between;
-    transform: translateX(200px);
+    transform: translateX(0px);
+    background-color: #0e202f;
 }
 
 article {
@@ -68,17 +118,13 @@ article {
 }
 
 .mask {
-    -webkit-mask-image: url(parallelogramm.svg);
-    mask-image: url(parallelogramm.svg);
-    mask-repeat: no-repeat;
     background-repeat: no-repeat;
     background-image: none;
     background-size: 100% 100%;
     background-position: center;
-    width: 400px;
-    height: 800px;
-    width: 100%;
-    margin-left: 151px;
+    width: 2000px;
+    height: 1000px;
+    margin-left: auto;
 }
 
 .firstarticle {
@@ -95,19 +141,21 @@ article {
     pointer-events: none;
     transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s 0.3s;
     opacity: 1;
-    z-index: 9999;
+    z-index: 101;
   }
   
   .trail-hidden {
     opacity: 0;
     visibility: hidden; /* Hides the element after fading out */
     transition: opacity 0.3s ease, visibility 0s 0.3s;
+    z-index: 101;
   }
   
   /* Add a class for the exploding effect */
   .explode {
     animation: explode 0.5s forwards;
     box-shadow: none;
+    z-index: 101;
   }
   
   @keyframes explode {
@@ -121,20 +169,38 @@ article {
     }
   }
   .seitenleiste {
+    margin-top: 0px;
     width: 237px;
     position: absolute;
     background-color:#0e202f;
     padding: 20px;
     right: 0;
-    height: 100000%;
+    height: 1000%;
     font-family: "Roboto";
     color: white;
     text-decoration: none;
-
+    z-index: 100;
+    position: absolute;
   }
-  .seitenleiste a:hover {
-    color: lightgrey;
+
+  .social-media-icons {
+    display: flex;
+    gap: 15px; 
+    margin-top: 20px;
 }
+
+.social-icon {
+    width: 50px; 
+    height: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-media-icons a:hover .social-icon {
+    transform: scale(1.0);
+    box-shadow: 0 0 10px rgba(0, 150, 255, 0.7); 
+}
+
+
 .impressum {
   font-size: 15px;
   color: rgb(255, 255, 255);
@@ -154,6 +220,15 @@ article {
   color: rgb(255, 255, 255);
   text-decoration: none;
   margin-left: 2px;
+}
+
+.impressum a:hover, 
+.oeffnungszeiten a:hover, 
+.events a:hover {
+  color: rgba(0, 150, 255, 0.8);
+  text-shadow: 
+    0 0 80px rgba(0, 150, 255, 0.2);   
+    transition: text-shadow 0.3s ease, color 0.3s ease; 
 }
 
 .Montag-Sonntag {
@@ -246,8 +321,8 @@ li {
   color: #333;
 }
 
-.menu a:hover {
-
+.menu-schrift a:hover {
+color: rgba(0, 150, 255, 0.8);
 }
 
 .Getränke {
