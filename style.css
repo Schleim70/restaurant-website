@@ -1,12 +1,39 @@
-body {
-    background-color: #133450;
-    margin: 0;
-    padding: 0;
+html, body {
+  background-color: #133450;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 nav {
     min-height: 100px;
 }
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+footer {
+  flex-shrink: 0;
+  background-color: #0e202f;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  width: 1885px;
+  font-family: Arial, Helvetica, sans-serif;
+  z-index: 10;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
 .kasten {
     background-color: #0e202f;
     min-height: 200px;
@@ -19,8 +46,33 @@ nav {
     justify-content: space-between;
     width: 40%;
     transform: rotate(-15deg) translateY(-100px);
-    word-spacing: 20px;
-    
+    word-spacing: 10px;
+    position: fixed;
+    z-index: 100;
+    margin-left: -10px;
+    margin-top: 205px;
+    position: absolute;
+}
+
+.menu-schrift a:hover, 
+.seitenleiste a:hover {
+  color: rgba(0, 150, 255, 0.8);
+  text-shadow: 0 0 4px rgba(0, 150, 255, 0.5), 0 0 8px rgba(0, 150, 255, 0.4);
+  transform: scale(3);
+}
+
+.menu-schrift a {
+  font-family: "Press Start 2P", Arial, system-ui;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.seitenleiste a {
+  font-family: "Roboto", sans-serif;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .ueberschrift {
@@ -38,8 +90,9 @@ p {
   }
 
 section {
-    margin: 0 auto;
-    width: 50%;
+  margin-top: -100px;
+    width: 1900px;
+    height: 1000px;
     display: flex;
     justify-content: space-between;
     transform: translateX(200px);
@@ -71,8 +124,9 @@ article {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
-    width: 400px;
-    height: 800px;
+    width: 2000px;
+    height: 1000px;
+    margin-left: auto;
 }
 
 
@@ -86,15 +140,15 @@ article {
     pointer-events: none;
     transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s 0.3s;
     opacity: 1;
+    z-index: 10000;
   }
   
   .trail-hidden {
     opacity: 0;
-    visibility: hidden; /* Hides the element after fading out */
+    visibility: hidden;
     transition: opacity 0.3s ease, visibility 0s 0.3s;
   }
   
-  /* Add a class for the exploding effect */
   .explode {
     animation: explode 0.5s forwards;
     box-shadow: none;
@@ -109,6 +163,195 @@ article {
       transform: scale(3);
       opacity: 0;
     }
-  }
 
-  
+  }
+  .seitenleiste {
+    margin-top: 0px;
+    width: 237px;
+    position: absolute;
+    background-color:#0e202f;
+    padding: 20px;
+    right: 0;
+    height: 1000%;
+    font-family: "Roboto";
+    color: white;
+    text-decoration: none;
+    z-index: 100;
+    position: absolute;
+  }
+  .socialtext {
+    margin-left: 45px;
+
+  }
+  .social-media-icons {
+    display: flex;
+    gap: 25px; 
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.social-icon {
+    margin-left: 0px;
+    width: 50px; 
+    height: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-media-icons a:hover .social-icon {
+    transform: scale(0.6);
+    box-shadow: 0 0 10px rgba(0, 150, 255, 0.7); 
+    border-radius: 50%;
+}
+
+.impressum {
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 25px;
+}
+
+.oeffnungszeiten {
+  font-size: 35px;
+  color: rgb(255, 255, 255); 
+  text-decoration: none;
+  margin-left: -45px;
+}
+
+.events {
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.impressum a:hover, 
+.oeffnungszeiten a:hover, 
+.events a:hover {
+  color: rgba(0, 150, 255, 0.8);
+  text-shadow: 
+    0 0 80px rgba(0, 150, 255, 0.2);   
+    transition: text-shadow 0.3s ease, color 0.3s ease; 
+}
+
+.Montag-Sonntag {
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: -10px;
+  text-decoration: none;
+}
+
+.montag, .dienstag, .mittwoch, .donnerstag, .freitag, .samstag, .sonntag {
+margin-left: -40px;
+}
+
+.montag {
+  list-style-type: none;
+  font-size: 17px;
+}
+
+.dienstag {
+  list-style-type: none;
+  font-size: 17px;
+}
+
+.mittwoch {
+  list-style-type: none;
+  font-size: 17px;
+}
+
+.donnerstag {
+  list-style-type: none;
+  font-size: 17px;
+}
+
+.freitag {
+  list-style-type: none;
+  font-size: 17px;
+}
+
+.samstag {
+  list-style-type: none;
+  font-size: 17px;
+}
+
+.sonntag {
+  list-style-type: none;
+  font-size: 17px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.kalender {
+  margin-left: 350px;
+  margin-top: 70px;
+}
+
+.menu-icon {
+  position: absolute;
+  top: 20px;
+  left: 1870px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.line {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+.menu {
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border: 1px solid #ddd;
+  display: none;
+  margin-left: -150px;
+}
+
+.menu a {
+  display: block;
+  margin: 5px 0;
+  text-decoration: none;
+  color: #333;
+}
+
+.menu-schrift a:hover {
+color: rgba(0, 150, 255, 0.8);
+}
+
+.Getränke {
+  text-decoration: underline;
+  color: rgba(0, 150, 255, 0.8);
+}
+.facebooktext {
+  text-decoration: none;
+  color: white;
+  margin-top: 200px;
+  font-size: 250%;
+  margin-left: 780px;
+}
+.posts {
+  margin-left: 680px;
+  height: 5000px;
+}
+
+.posts2 {
+  margin-left: 680px;
+  margin-top: 500px;
+}
+
+@media (max-width: 430px) {
+  .menu-schrift li a {
+    font-size: 0.7rem !important;
+    margin-right: 0.5rem;
+  }
+}
