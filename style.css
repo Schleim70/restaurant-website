@@ -1,12 +1,12 @@
-html,
-body {
+html, body {
   background-color: #133450;
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-  overflow-x: hidden;
-  overflow-y: inherit;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 nav {
@@ -16,26 +16,6 @@ nav {
 a {
   text-decoration: none;
   color: white;
-  white-space: pre;
-}
-
-p {
-  white-space: pre;
-  /* Erlaubt mehrere Leerzeichen */
-  color: white;
-}
-
-td {
-  padding-right: 12px;
-}
-
-.content-area {
-  float: left;
-  width: 80%;
-}
-
-.main-container {
-  min-height: 2000px;
 }
 
 footer {
@@ -44,21 +24,14 @@ footer {
   color: white;
   text-align: center;
   padding: 10px;
-  width: 100%;
+  width: 1885px;
   font-family: Arial, Helvetica, sans-serif;
-  position: relative;
-  /* Absolute Positionierung entfernt */
-  margin-bottom: 0;
-  /* Entfernt den unteren Randabstand */
-}
-
-footer a:hover {
-  color: rgba(0, 150, 255, 0.8);
+  z-index: 10;
 }
 
 .kasten {
   margin-left: -7px;
-  background-color: black;
+  background-color: #0e202f;
   min-height: 200px;
   transform: skewY(-15deg) translateY(-255px);
   z-index: 100;
@@ -66,19 +39,42 @@ footer a:hover {
   top: 0;
   left: 0;
   width: 100%;
+  position: absolute;
 }
 
 .menu-schrift {
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  width: 40%;
-  transform: rotate(-15deg) translateY(-100px);
-  word-spacing: 10px;
-  position: fixed;
-  z-index: 100;
-  margin-left: -10px;
-  margin-top: 205px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    transform: rotate(-15deg) translateY(-100px);
+    word-spacing: 10px;
+    position: fixed;
+    z-index: 100;
+    margin-left: -10px;
+    margin-top: 205px;
+    position: absolute;
+}
+
+.menu-schrift a:hover, 
+.seitenleiste a:hover {
+  color: rgba(0, 150, 255, 0.8);
+  text-shadow: 0 0 4px rgba(0, 150, 255, 0.5), 0 0 8px rgba(0, 150, 255, 0.4);
+  transform: scale(3);
+}
+
+.menu-schrift a {
+  font-family: "Press Start 2P", Arial, system-ui;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.seitenleiste a {
+  font-family: "Roboto", sans-serif;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .ueberschrift {
@@ -104,15 +100,14 @@ p {
   font-size: 25px;
 }
 
-section.main-image {
+section {
   margin-top: -100px;
-  width: 100%;
-  height: 100vh;
-  /* Bild nimmt die gesamte Höhe des Viewports ein */
-  display: flex;
-  justify-content: center;
-  transform: translateX(0px);
-  background-color: #0e202f;
+    width: 1900px;
+    height: 1000px;
+    display: flex;
+    justify-content: space-between;
+    transform: translateX(0px);
+    background-color: #0e202f;
 }
 
 article {
@@ -127,25 +122,13 @@ article {
 }
 
 .mask {
-  background-repeat: no-repeat;
-  background-image: url('images/kneipe.png');
-  /* Stelle sicher, dass der Pfad zum Bild korrekt ist */
-  background-size: cover;
-  /* Bild soll den Container füllen */
-  background-position: center;
-  width: 100%;
-  height: 100vh;
-  /* Bild nimmt die gesamte Höhe des Viewports ein */
-  margin-left: 0;
-  margin-right: 0;
-  object-fit: cover;
-  /* Bild soll den Container füllen */
-}
-
-.dart {
-  margin-top: 1000px;
-  margin-left: -500px;
-  z-index: 0;
+    background-repeat: no-repeat;
+    background-image: none;
+    background-size: 100% 100%;
+    background-position: center;
+    width: 2000px;
+    height: 1000px;
+    margin-left: auto;
 }
 
 .dart-text {
@@ -158,86 +141,107 @@ article {
 }
 
 .trail {
-  position: absolute;
-  border-radius: 50%;
-  width: 10px;
-  height: 10px;
-  background: rgba(0, 150, 255, 0.8);
-  box-shadow: 0 0 4px 4px rgba(0, 150, 255, 0.8);
-  pointer-events: none;
-  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s 0.3s;
-  opacity: 1;
-  z-index: 101;
-}
-
-.trail-hidden {
-  opacity: 0;
-  visibility: hidden;
-  /* Versteckt das Element nach dem Ausblenden */
-  transition: opacity 0.3s ease, visibility 0s 0.3s;
-  z-index: 101;
-}
-
-/* Klasse für den Explosionseffekt */
-.explode {
-  animation: explode 0.5s forwards;
-  box-shadow: none;
-  z-index: 101;
-}
-
-@keyframes explode {
-  0% {
-    transform: scale(1);
+    position: absolute;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background: rgba(0, 150, 255, 0.8);
+    box-shadow: 0 0 4px 4px rgba(0, 150, 255, 0.8);
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s 0.3s;
     opacity: 1;
+    z-index: 10000;
   }
-
-  100% {
-    transform: scale(3);
+  
+  .trail-hidden {
     opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+    z-index: 101;
   }
+  
+  .explode {
+    animation: explode 0.5s forwards;
+    box-shadow: none;
+    z-index: 101;
+  }
+  
+  @keyframes explode {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(3);
+      opacity: 0;
+    }
+
+  }
+  .seitenleiste {
+    margin-top: 0px;
+    width: 237px;
+    position: absolute;
+    background-color:#0e202f;
+    padding: 20px;
+    right: 0;
+    height: 1000%;
+    font-family: "Roboto";
+    color: white;
+    text-decoration: none;
+    z-index: 100;
+    position: absolute;
+  }
+  .socialtext {
+    margin-left: 45px;
+
+  }
+  .social-media-icons {
+    display: flex;
+    gap: 25px; 
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
-.seitenleiste {
-  margin-top: 0px;
-  float: right;
-  width: 20%;
-  background-color: #0e202f;
-  padding: 20px;
-  box-sizing: border-box;
-
-  min-height: inherit;
-  font-family: "Roboto";
-  color: white;
-  text-decoration: none;
+.social-icon {
+    margin-left: 0px;
+    width: 50px; 
+    height: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.seitenleiste a:hover {
-  color: rgba(0, 150, 255, 0.8);
+.social-media-icons a:hover .social-icon {
+    transform: scale(0.6);
+    box-shadow: 0 0 10px rgba(0, 150, 255, 0.7); 
 }
 
 .impressum {
   font-size: 15px;
   color: rgb(255, 255, 255);
   text-decoration: none;
-  margin-left: 17px;
+  margin-left: 25px;
 }
 
 .oeffnungszeiten {
   font-size: 35px;
   color: rgb(255, 255, 255);
   text-decoration: none;
-  margin-left: -50px;
-}
-
-.oeffnungszeiten a:hover {
-  color: rgba(0, 150, 255, 0.8);
+  margin-left: -45px;
 }
 
 .events {
   font-size: 20px;
   color: rgb(255, 255, 255);
   text-decoration: none;
-  margin-left: 2px;
+  margin-left: 10px;
+}
+
+.impressum a:hover, 
+.oeffnungszeiten a:hover, 
+.events a:hover {
+  color: rgba(0, 150, 255, 0.8);
+  text-shadow: 
+    0 0 80px rgba(0, 150, 255, 0.2);   
+    transition: text-shadow 0.3s ease, color 0.3s ease; 
 }
 
 .Montag-Sonntag {
@@ -247,8 +251,6 @@ article {
   margin-left: -10px;
   line-height: 3;
 }
-
-/* Alle Wochentage Auflistung */
 
 .montag,
 .dienstag,
@@ -340,10 +342,26 @@ li {
 }
 
 .menu-schrift a:hover {
-  color: rgba(0, 150, 255, 0.8);
+color: rgba(0, 150, 255, 0.8);
 }
 
 .Getränke {
   text-decoration: underline;
   color: rgba(0, 150, 255, 0.8);
+}
+.facebooktext {
+  text-decoration: none;
+  color: white;
+  margin-top: 200px;
+  font-size: 250%;
+  margin-left: 780px;
+}
+.posts {
+  margin-left: 680px;
+  height: 5000px;
+}
+
+.posts2 {
+  margin-left: 680px;
+  margin-top: 500px;
 }
