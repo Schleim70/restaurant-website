@@ -9,6 +9,7 @@ html, body {
   min-height: 100vh;
 }
 
+
 nav {
     min-height: 100px;
 }
@@ -27,6 +28,13 @@ footer {
   width: 1885px;
   font-family: Arial, Helvetica, sans-serif;
   z-index: 10;
+}
+
+.burger,
+.mobile-menu,
+.bild-logo-mobile,
+.logo {
+  display: none;
 }
 
 .kasten {
@@ -119,7 +127,7 @@ article {
     
 }
 
-.mask {
+.bild-logo {
     background-repeat: no-repeat;
     background-image: none;
     background-size: 100% 100%;
@@ -200,6 +208,7 @@ article {
     width: 50px; 
     height: 50px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 50%;
 }
 
 .social-media-icons a:hover .social-icon {
@@ -351,4 +360,90 @@ color: rgba(0, 150, 255, 0.8);
 .posts2 {
   margin-left: 680px;
   margin-top: 500px;
+}
+
+@media (max-width: 800px) {
+  
+  .burger {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 2000;
+  }
+
+  .burger .line {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+  }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #0e202f;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    padding: 60px 20px;
+    z-index: 1500;
+  }
+
+  .mobile-menu.show {
+    display: flex;
+  }
+
+  .mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-family: "Press Start 2P", Arial, system-ui;
+    margin: 20px 0;
+    font-size: 30px;
+  }
+  .mobile-menu a :hover {
+      text-decoration: underline;
+      color: rgba(0, 150, 255, 0.8);
+  }
+
+  .kasten, .seitenleiste, footer {
+    display: none;
+  }
+
+  section {
+    position: absolute;
+    width: 100vw;
+    margin: -150px;
+  }
+  
+  footer {
+    display: none;
+  }
+  .menu-schrift {
+    display: none;
+  }
+  .bild-logo {
+    display: none;
+  }
+  .bild-logo-mobile {
+    max-width: 100%;
+    width: 100%;
+    margin-top: -50px;
+    z-index: 1;
+    display: flex;
+    position: center;
+  }
+  .logo {
+    z-index: 2;
+    position: fixed;
+    margin: 165px;
+    display: flex;
+  }
+  article {
+    display: none;
+  }
 }
