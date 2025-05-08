@@ -4,6 +4,7 @@ html, body {
     height: 100%;
     min-height: 100vh;
     margin: 0;
+  background-color: #133450;
   }
 
   section, .bild-logo, footer {
@@ -60,7 +61,7 @@ html, body {
       color: rgba(0, 150, 255, 0.8);
   }
 
-  .kasten, .seitenleiste, footer {
+  .kasten, .seitenleiste, footer, .menu-schrift, .bild-logo {
     display: none;
   }
 
@@ -69,16 +70,6 @@ html, body {
     top: 0;
     left: 0;
     width: 100vw !important;
-  }
-  
-  footer {
-    display: none;
-  }
-  .menu-schrift {
-    display: none;
-  }
-  .bild-logo {
-    display: none;
   }
 
   .bild-logo-mobile {
@@ -92,8 +83,13 @@ html, body {
   .logo {
     z-index: 2;
     position: fixed;
-    margin: 165px;
     display: flex;
+    margin-top: -70%;
+    margin-right: 30%;
+    size: 500px; 
+    width: 70%; 
+    height: auto
+    
   }
   article {
     display: none;
