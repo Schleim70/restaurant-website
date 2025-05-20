@@ -36,13 +36,13 @@ footer {
 .kasten {
   margin-left: -0.7%;
   background-color: #0e202f;
-  min-height: 20vh;
-  transform: skewY(-15deg) translateY(-25vh);
+  min-height: 200px;
+  transform: skewY(-15deg) translateY(-160px);
   z-index: 100;
   position: fixed;
-  top: -1%;
+  top: 0;
   left: 0;
-  width: 100%;
+  width: 800px;
   position: absolute;
 }
 
@@ -50,7 +50,7 @@ footer {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    width: 40%;
+    width: 400px;
     transform: rotate(-15deg) translateY(-10vh);
     word-spacing: 1%;
     position: fixed;
@@ -64,11 +64,12 @@ footer {
 .seitenleiste a:hover {
   color: rgba(0, 150, 255, 0.8);
   text-shadow: 0 0 0.4rem rgba(0, 150, 255, 0.5), 0 0 0.8rem rgba(0, 150, 255, 0.4);
-  transform: scale(3);
 }
 
-.menu-schrift a {
+.menu-schrift li a {
   font-family: "Press Start 2P", Arial, system-ui;
+  font-size: 1rem;
+  margin-right: 10px;
   color: white;
   text-decoration: none;
   transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
@@ -112,6 +113,29 @@ section {
     justify-content: space-between;
     transform: translateX(0);
     background-color: #0e202f;
+}
+
+section#kneipe4 {
+  background-image: url("./images/kneipe.png");
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+img#logo {
+  width: 400px;
+  height: 400px;
+  transform: scale(1.0);
+  transition: transform 0.3s ease-in-out;
+}
+
+img#logo:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
 }
 
 article {
@@ -212,11 +236,13 @@ article {
     margin-left: 0px;
     width: 50px; 
     height: 50px;
+    transform: scale(1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 50%;
 }
-.social-media-icons a:hover .social-icon {
-    transform: scale(0.6);
+
+.social-icon:hover {
+    transform: scale(1.4);
     box-shadow: 0 0 1rem rgba(0, 150, 255, 0.7); 
 }
 
@@ -369,4 +395,10 @@ color: rgba(0, 150, 255, 0.8);
 .posts2 {
   margin-left: 68%;
   margin-top: 50vh;
+}
+
+@media screen and (max-width: 1024px) {
+  .menu-schrift li a {
+    font-size: 0.8rem;
+  }
 }
