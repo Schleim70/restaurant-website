@@ -89,3 +89,8 @@ function toggleMenu() {
       menu.style.display = "none";
   }
 }
+
+function toggleMobileMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("show"); // Toggles Menu
+}

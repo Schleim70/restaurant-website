@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" media="screen and (min-width:769px)" href="style.css">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="mobile.css?v=?php echo time(); ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Protest+Guerrilla&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -50,6 +51,7 @@
         </a>
     </div>          
     </nav>
+
     <div class="kasten"></div> 
     <nav>
         <ul class="menu-schrift"> 
@@ -70,7 +72,7 @@
 
    <section>
         <img src="images/kneipe4.png" 
-   alt="Das Restaurant" class="mask" /> 
+   alt="Das Restaurant" class="bild-logo" /> 
    </section>
    <article> <ul class="firstarticle" ul>
     <p>
@@ -84,5 +86,28 @@
             <a href="Impressum.html">Alle Rechte vorbehalten</a>
         </footer>
 <script src="scripts.js"></script>
+
+<!---------------MOBILE--------------->
+
+<div class="burger" onclick="toggleMobileMenu()">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+  
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="Getraenkekarte.html">Getränkekarte</a>
+    <a href="Infos.html">Informationen</a>
+    <a href="Events.html">Events</a>
+  </div>
+  <section>
+    <img src="images/kneipe.png" 
+    alt="Das Restaurant" class="bild-logo-mobile" /> 
+    <img src="images/logo.png" 
+    alt="Das logo" class="logo" />
+    </section>
+
+<!---------------MOBILE--------------->
 </body>
 </html>
