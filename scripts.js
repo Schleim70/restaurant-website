@@ -7,8 +7,8 @@ var dots = [],
   };
 
 var Dot = function() {
-  this.x = 0;
-  this.y = 0;
+  this.x = mouse.x;
+  this.y = mouse.y;
   this.node = (function() {
     var n = document.createElement("div");
     n.className = "trail";

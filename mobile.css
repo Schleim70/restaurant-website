@@ -13,8 +13,6 @@ html, body {
     overflow-x: hidden;
   }
 
-
-  
   .burger {
     display: flex;
     position: fixed;
@@ -61,7 +59,7 @@ html, body {
       color: rgba(0, 150, 255, 0.8);
   }
 
-  .kasten, .seitenleiste, footer, .menu-schrift, .bild-logo {
+  .kasten, .seitenleiste, footer, .menu-schrift, .bild-logo, .logo, #logo {
     display: none;
   }
 
@@ -80,7 +78,7 @@ html, body {
     position: center;
     object-fit: cover;
   }
-  .logo {
+  .logo-mobile {
     z-index: 2;
     position: fixed;
     display: flex;

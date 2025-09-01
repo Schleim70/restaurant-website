@@ -46,32 +46,27 @@
                 <img src="images/maps-icon.png" alt="Google-Maps" class="social-icon">
             </a>
         </div>        
-    </nav>
-    <div class="kasten"></div> 
-    <nav>
-        <ul class="menu-schrift"> 
-            <li>
-                <a href="index.html">Home</a>
-            </li>
-            <li>
-                <a href="Getraenkekarte.html">Getränkekarte</a>
-            </li>
-            <li>
-                <a href="Infos.html">Informationen</a>
-            </li>
-            <li>
-                <a href="Events.html">Events</a>
-            </li>
-        </ul>
-    </nav>
+        <div class="back-button" style="position: absolute; top: 20px; left: -1600px; z-index: 100;">
+            <a href="index.html" style="
+                display: inline-block;
+                padding: 20px 35px;
+                font-size: 22px;
+                font-family: Arial, sans-serif;
+                text-decoration: none;
+                color: white;
+                background-color: #0e202f;
+                border: 2px solid rgba(0, 150, 255, 0.7);
+                border-radius: 5px;
+                transition: all 0.3s ease-in-out;
+            " 
+            onmouseover="this.style.backgroundColor='rgba(0, 150, 255, 0.7)'; this.style.boxShadow='0 0 1rem rgba(0, 150, 255, 0.7)'; this.style.transform='scale(1.05)';"
+            onmouseout="this.style.backgroundColor='#0e202f'; this.style.boxShadow='none'; this.style.transform='scale(1)';">
+                « Zurück
+            </a>
+        </div>
 
 
-<div class="wrapper">
-</div>
-<footer>
-    <p>Double In &copy; 2025</p>
-    <p>Alle Rechte vorbehalten</p>
-</footer>
+
 <script src="scripts.js"></script>
 
 <!---------------MOBILE--------------->
