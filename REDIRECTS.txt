@@ -1,0 +1,40 @@
+==============================
+REDIRECT SNIPPETS
+==============================
+
+Füge jeweils diesen Code in den <head> der entsprechenden Desktop-HTML ein:
+
+--- index.html ---
+<script>
+  if (window.innerWidth <= 768) {
+    window.location.replace("index-mobile.html");
+  }
+</script>
+
+--- Oeffnungszeiten.html ---
+<script>
+  if (window.innerWidth <= 768) {
+    window.location.replace("Oeffnungszeiten-mobile.html");
+  }
+</script>
+
+--- Infos.html ---
+<script>
+  if (window.innerWidth <= 768) {
+    window.location.replace("Infos-mobile.html");
+  }
+</script>
+
+--- Getraenkekarte.html ---
+<script>
+  if (window.innerWidth <= 768) {
+    window.location.replace("Getraenkekarte-mobile.html");
+  }
+</script>
+
+--- Impressum.html ---
+<script>
+  if (window.innerWidth <= 768) {
+    window.location.replace("Impressum-mobile.html");
+  }
+</script>

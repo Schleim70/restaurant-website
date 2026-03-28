@@ -89,5 +89,7 @@ function toggleMenu() {
 
 function toggleMobileMenu() {
   const menu = document.getElementById("mobileMenu");
+  const burger = document.querySelector(".burger");
   menu.classList.toggle("show");
+  burger.classList.toggle("open");
 }

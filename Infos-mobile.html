@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Protest+Guerrilla&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Informationen & Events - Double In</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .mobile-content {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+<header class="mobile-header">
+    <img src="images/logo.png" alt="Logo" class="mobile-header-logo" />
+    <span class="mobile-header-title">Double In</span>
+    <div class="burger" onclick="toggleMobileMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index-mobile.html">Home</a>
+    <a href="Getraenkekarte-mobile.html">Getränkekarte</a>
+    <a href="Infos-mobile.html">Informationen</a>
+    <a href="Oeffnungszeiten-mobile.html">Öffnungszeiten</a>
+    <a href="Impressum-mobile.html">Impressum</a>
+</div>
+
+<div class="mobile-content">
+    <h2 class="mobile-page-title">Informationen & Events</h2>
+    <div class="mobile-calendar-wrap">
+        <iframe
+            src="https://calendar.google.com/calendar/embed?src=d7c7e1237b6e298e0347fb7cff2fc3ee5ace851c7f5a76e2d0da0550deb7a4b1%40group.calendar.google.com&ctz=Europe%2FBerlin"
+            style="border: 0"
+            width="100%"
+            height="500"
+            frameborder="0"
+            scrolling="no">
+        </iframe>
+    </div>
+</div>
+
+<footer class="mobile-footer">
+    <a href="Impressum-mobile.html">Double In &copy; 2025</a>
+    <a href="Impressum-mobile.html">Alle Rechte vorbehalten</a>
+</footer>
+
+<script src="scripts.js"></script>
+</body>
+</html>
