@@ -1,17 +1,21 @@
 var dots = [],
-  mouse = {
-    x: 0,
-    y: 0,
-    isMoving: false,
-    stopTimeout: null
-  };
+  mouse = { x: -999, y: -999 };
 
-var Dot = function() {
-  this.x = mouse.x;
-  this.y = mouse.y;
+const COUNT = 6;
+const sizes = [14, 11, 9, 7, 5, 4];
+const opacities = [0.95, 0.75, 0.55, 0.38, 0.22, 0.12];
+
+let hasMovedOnce = false;
+let stopTimeout = null;
+
+var Dot = function(size) {
+  this.x = -999;
+  this.y = -999;
   this.node = (function() {
     var n = document.createElement("div");
     n.className = "trail";
+    n.style.width = size + "px";
+    n.style.height = size + "px";
     document.body.appendChild(n);
     return n;
   }());
@@ -22,75 +26,68 @@ Dot.prototype.draw = function() {
   this.node.style.top = this.y + "px";
 };
 
-for (var i = 0; i < 3; i++) {
-  var d = new Dot();
-  dots.push(d);
+for (var i = 0; i < COUNT; i++) {
+  dots.push(new Dot(sizes[i]));
+}
+
+function fadeOut() {
+  dots.forEach(function(dot) {
+    dot.node.style.transition = "opacity 0.4s ease";
+    dot.node.style.opacity = "0";
+  });
+}
+
+function fadeIn() {
+  dots.forEach(function(dot, i) {
+    dot.node.style.transition = "opacity 0.15s ease";
+    dot.node.style.opacity = opacities[i];
+  });
 }
 
 function draw() {
-  var x = mouse.x,
-    y = mouse.y;
-
-  dots.forEach(function(dot, index, dots) {
-    var nextDot = dots[index + 1] || dots[0];
-    dot.x = x;
-    dot.y = y;
+  var tx = mouse.x, ty = mouse.y;
+  dots.forEach(function(dot, i) {
+    dot.x += (tx - dot.x) * (0.55 - i * 0.04);
+    dot.y += (ty - dot.y) * (0.55 - i * 0.04);
     dot.draw();
-    x += (nextDot.x - dot.x) * .6;
-    y += (nextDot.y - dot.y) * .6;
+    tx = dot.x;
+    ty = dot.y;
   });
+  requestAnimationFrame(draw);
 }
 
-// Function to trigger the bubble explosion
-function triggerExplosion() {
-  dots.forEach(function(dot) {
-    dot.node.classList.add('explode');
-    setTimeout(function() {
-      dot.node.classList.remove('explode');
-      dot.node.classList.add('trail-hidden'); // Hide after explosion
-    }, 500); // Reset after the animation
-  });
-}
-
-// Detect mouse move and reset timer
 addEventListener("mousemove", function(event) {
-  // Show the dots when mouse moves
-  dots.forEach(function(dot) {
-    dot.node.classList.remove('trail-hidden');
-    dot.node.classList.add('trail');
-  });
-  
   mouse.x = event.pageX;
   mouse.y = event.pageY;
-  mouse.isMoving = true;
 
-  // Clear the previous stop timeout
-  clearTimeout(mouse.stopTimeout);
+  if (!hasMovedOnce) {
+    hasMovedOnce = true;
+    dots.forEach(function(dot) {
+      dot.x = mouse.x;
+      dot.y = mouse.y;
+    });
+    requestAnimationFrame(fadeIn);
+  } else {
+    fadeIn();
+  }
 
-  // Set a new stop timeout
-  mouse.stopTimeout = setTimeout(function() {
-    mouse.isMoving = false;
-    triggerExplosion(); // Trigger explosion when the mouse stops
-  }, 150); // Time delay before detecting the stop
+  clearTimeout(stopTimeout);
+  stopTimeout = setTimeout(fadeOut, 180);
 });
 
-function animate() {
-  draw();
-  requestAnimationFrame(animate);
-}
+draw();
 
-animate();
-
+// deine anderen Funktionen bleiben unverändert
 function toggleMenu() {
   const menu = document.getElementById("menu");
   if (menu.style.display === "none" || menu.style.display === "") {
-      menu.style.display = "block";
+    menu.style.display = "block";
   } else {
-      menu.style.display = "none";
+    menu.style.display = "none";
   }
 }
 
 function toggleMobileMenu() {
   const menu = document.getElementById("mobileMenu");
-  menu.classList.toggle("show"); // Toggles Menu
+  menu.classList.toggle("show");
 }
